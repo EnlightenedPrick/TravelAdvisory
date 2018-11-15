@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		<!--BS CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>					<!--JQUERY-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>				<!--BS CDN-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">			<!--FONT F-->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">				<!--FONT F-->
+  <link rel="stylesheet" href="/assets/styles.css" type="text/css" />
+
+</head>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<% include partials/nav.ejs %>
+<div class="jumbotron text-center">
+  <h1>Sign Up</h1>
+  <p>Let us know a little about you...</p>
+</div>
+
+<div class="container-fluid" style="background-image: url(/assets/signup.jpg);">
+  <h2 class="text-center">FILL IN DETAILS</h2><br />
+  <center>
+  <form class="form-inline frm_style" method="post">
+    <div class="input-group">
+      First Name
+      <input type="text" name="first" class="form-control" size="50" placeholder="First Name" required><br /><br /><br /><br />
+      Last Name
+      <input type="text" name="last" class="form-control" size="50" placeholder="Last Name" required><br /><br /><br /><br />
+      Age
+      <input type="number" name="age" class="form-control" size="50" placeholder="Age" min="15" max="120"required><br /><br /><br /><br />
+      Gender<br />
+      <!-- <div> -->
+      <fieldset>
+      <legend></legend>
+      <div class="inline">
+      <label class="radio-inline"><input type="radio" name="optradio" value="Male">Male</label>
+      </div>
+      <div class="inline">
+      <label class="radio-inline"><input type="radio" name="optradio" value="Female">Female</label>
+      </div>
+      <div class="inline">
+      <label class="radio-inline"><input type="radio" name="optradio" value="Other">Other</label>
+  	  </div>
+  	  </fieldset><br /><br />
+  	  <!-- </div> -->
+  	  DOB
+      <input type="date" name="dob" class="form-control" size="50" placeholder="DOB" required><br /><br /><br /><br />
+      Country
+      <input type="text" name="country" class="form-control" size="50" placeholder="Country" required><br /><br /><br /><br />
+      State
+      <input type="text" name="state" class="form-control" size="50" placeholder="State" required><br /><br /><br /><br />
+      Postal Code
+      <input type="number" name="zip" class="form-control" size="50" placeholder="ZIP Code" min="100000" max="999999" required><br /><br /><br /><br />
+      Mobile Number
+      <input type="number" name="mobileno" class="form-control" size="50" placeholder="Mobile Number" min="1000000000" max="9999999999" required><br /><br /><br /><br />
+      Email
+      <input type="email" name="email" class="form-control" size="50" placeholder="Email Address" required><br /><br /><br /><br />
+      Password
+      <input type="password" name="password" class="form-control" size="50" required><br /><br /><br /><br />
+      Re-enter Password
+      <input type="password" class="form-control" size="50" required><br /><br /><br /><br />
+      <input type="submit" size="10" value="Sign up"><br /><br />
+    </div>
+  </form>
+  </center>
+</div>
+
+<div id="contact" class="container-fluid bg-grey slideanim">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Karnataka, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Enter your comments here..." rows="5" maxlength="150"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <a href="/contact-success"> <button class="btn btn-default pull-right" type="submit">Send</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SUCCESSFUL</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    <!--BS CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>         <!--JQUERY-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>       <!--BS CDN-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">     <!--FONT F-->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">       <!--FONT F-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<style>
+
+.container-fluid {
+    padding: 100px 50px;
+}
+
+.logor {
+    color: #cc0000;
+    font-size: 200px;
+}
+
+.big{
+  font-size: 30px;
+}
+
+</style>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div id="ok"  class="container-fluid">
+  <div class="row">
+    <center>
+    <div>
+      <span class="glyphicon glyphicon-remove logor"></span>
+    </div>
+    <div>
+      <p class="big">Wrong Details Entered</p>
+    </div>
+    <div>
+      <p class="big">Going back to sign in page...</p>
+    </div>
+  </center>
+  </div>
+</div>
+
+<script>
+  setTimeout(function () {
+     // after 2 seconds
+     window.location = "/sign-in";
+  }, 2000)
+</script>
+
+</body>
+</html>

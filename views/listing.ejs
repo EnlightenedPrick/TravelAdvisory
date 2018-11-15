@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Spots</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">		<!--BS CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>					<!--JQUERY-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>				<!--BS CDN-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">			<!--FONT F-->
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">				<!--FONT F-->
+  <link rel="stylesheet" href="/assets/styles.css" type="text/css" />
+</head>
+<style>
+
+.container_s {
+  position: relative;
+  max-width: 1200px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+  padding-top: 20px;
+}
+
+.container_s .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  width: 1200px; /* Full width */
+  padding: 20px; /* Some padding */
+}
+
+</style>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+   // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 900, function(){
+
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<% include partials/nav-sign.ejs %>
+<div class="jumbotron text-center">
+  <h1>Our Listing</h1>
+  <p>Relish the collection...</p>
+</div>
+
+<div id="listing" class="container_s">
+  <a href="/spot_1"><img src="/assets/bhutan111.jpg" alt="Bhutan" style="width:100%;"></a>
+  <div class="content">
+    <h1>Bhutan</h1>
+    <p>Lorem ipsum..</p>
+  </div>
+</div>
+
+<br />
+
+<div class="container_s">
+  <a href="/spot_2"><img src="/assets/maldives.jpg" alt="Maldives" style="width:100%;"></a>
+  <div class="content">
+    <h1>Maldives</h1>
+    <p>Lorem ipsum..</p>
+  </div>
+</div>
+
+<br /><br />
+
+<div id="contactus" class="container-fluid bg-grey slideanim">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Karnataka, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +91 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Enter your comments here..." rows="5" maxlength="150"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <a href="/contact-success"> <button class="btn btn-default pull-right" type="submit">Send</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+</footer>
+
+</body>
+</html>
